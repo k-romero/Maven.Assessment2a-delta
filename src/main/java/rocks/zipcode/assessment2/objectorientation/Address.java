@@ -75,8 +75,21 @@ public class Address {
 
     @Override
     public boolean equals(Object o) {
-        return (Boolean)null;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Address address = (Address) o;
+        return addressLine1.equals(address.getAddressLine1()) &&
+                addressLine2.equals(address.getAddressLine2()) &&
+                city.equals(address.getCity()) &&
+                state.equals(address.state) &&
+                zipcode.equals(address.getZipcode());
     }
+
+
 
     @Override
     public String toString() {
