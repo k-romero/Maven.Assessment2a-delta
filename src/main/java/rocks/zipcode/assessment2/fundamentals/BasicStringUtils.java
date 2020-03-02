@@ -50,8 +50,6 @@ public class BasicStringUtils {
             remove.add(temp);
             temp = "";
         }
-        System.out.println(remove);
-
         for (int i = 0; i < string.length(); i++) {
             String temp = "";
             temp += string.charAt(i);
@@ -60,7 +58,6 @@ public class BasicStringUtils {
             }
             temp = "";
         }
-
         return result;
     }
 
@@ -70,6 +67,10 @@ public class BasicStringUtils {
      * @return reverse of `string` with `charactersToRemove` removed
      */
     public static String removeCharactersThenReverse(String string, String charactersToRemove) {
-        return null;
+        String result = removeCharacters(string,charactersToRemove);
+
+
+
+        return reverse(result);
     }
 }
