@@ -1,5 +1,7 @@
 package rocks.zipcode.assessment2.fundamentals;
 
+import java.util.ArrayList;
+
 public class BasicStringUtils {
     /**
      * @param string1 - Base string to be added to
@@ -7,7 +9,7 @@ public class BasicStringUtils {
      * @return concatenation of `string1` and `string2`
      */
     public static String concatentate(String string1, String string2) {
-        return null;
+        return string1 + string2;
     }
 
     /**
@@ -15,7 +17,11 @@ public class BasicStringUtils {
      * @return an identical string with characters in reverse order
      */
     public static String reverse(String string1) {
-        return null;
+        String result = "";
+        for (int i = string1.length()-1; i >= 0; i--) {
+            result += string1.charAt(i);
+        }
+        return result;
     }
 
     /**
@@ -24,7 +30,8 @@ public class BasicStringUtils {
      * @return concatenation of the reverse of `string1` and reverse of `string2`
      */
     public static String reverseThenConcatenate(String string1, String string2) {
-        return null;
+        String combinedString = concatentate(string2,string1);
+        return reverse(combinedString);
     }
 
     /**
@@ -33,7 +40,28 @@ public class BasicStringUtils {
      * @return `string` with `charactersToRemove` removed
      */
     public static String removeCharacters(String string, String charactersToRemove) {
-        return null;
+        String result = "";
+
+        Character[] charsToRemove = new Character[charactersToRemove.length()];
+        ArrayList<String> remove = new ArrayList<>();
+        for (int i = 0; i < charsToRemove.length; i++) {
+            String temp = "";
+            temp += charactersToRemove.charAt(i);
+            remove.add(temp);
+            temp = "";
+        }
+        System.out.println(remove);
+
+        for (int i = 0; i < string.length(); i++) {
+            String temp = "";
+            temp += string.charAt(i);
+            if(!remove.contains(temp)){
+                result += temp;
+            }
+            temp = "";
+        }
+
+        return result;
     }
 
     /**
